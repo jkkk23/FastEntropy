@@ -1,0 +1,1 @@
+"""Core FastEntropy codec modules."""
