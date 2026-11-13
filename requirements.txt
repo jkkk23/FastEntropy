@@ -1,0 +1,5 @@
+numpy==1.26.4
+torch==2.2.1
+torchac==0.9.3
+torchsparse @ git+https://github.com/mit-han-lab/torchsparse.git@385f5ce8718fcae93540511b7f5832f4e71fd835
+tqdm==4.67.1
