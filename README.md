@@ -1,21 +1,14 @@
 # FastEntropy
 
-This is the compact code release. It contains only the
-best evaluated path:
+This repository provides a compact code release of FastEntropy, containing the final evaluated configuration:
 
-- multi-level spherical-coordinate occupancy representation;
-- phi-first two-stage occupancy prediction;
-- hierarchical count-symbol routing with three structural groups and four
-  specialized entropy experts per group;
-- cross-expert aligned context propagation with group-boundary feature
-  alignment and gated lineage memory;
-- expert-guided zero-bit geometry refinement with a fixed routing threshold
-  of 0.5.
+- Multi-Level Spherical Occupancy Representation;
+- two-stage occupancy probability prediction;
+- Hierarchical Count-Symbol Expert Routing with three structural groups and four entropy experts per group;
+- Expert-Aware Hierarchical Context Propagation, including Cross-Expert Propagation with Group-Boundary Alignment and Lineage Memory Propagation;
+- Expert-Guided Zero-Bit Geometry Refinement with a fixed branch-selection threshold of 0.5.
 
-The release includes separate final model bundles for SemanticKITTI and Ford.
-Training exposes only the requested optimization and input settings. Compression
-and decompression expose only the input folder, output folder, model bundle,
-`dd`, and dataset.
+The release includes separate final model bundles for SemanticKITTI and Ford. Training scripts expose essential optimization and input settings, while compression and decompression scripts accept the input folder, output folder, model bundle, `dd`, and dataset as arguments.
 
 ## Project Structure
 
