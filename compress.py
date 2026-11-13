@@ -70,6 +70,9 @@ def main():
     with torch.inference_mode():
         for input_path in tqdm(input_files):
             sample = data.load_points(input_path, args.dataset)
+            if use_fp16:
+                torch.cuda.synchronize()
+            started = time.perf_counter()
             coords_int, metadata = codec.quantize_points(
                 sample.points,
                 config,
@@ -78,9 +81,6 @@ def main():
             metadata = data.merge_metadata(metadata, sample)
             sparse_input = codec.make_sparse_input(coords_int, device)
 
-            if use_fp16:
-                torch.cuda.synchronize()
-            started = time.perf_counter()
             with torch.cuda.amp.autocast(enabled=use_fp16):
                 pyramid = codec.build_occupancy_pyramid(
                     net,
